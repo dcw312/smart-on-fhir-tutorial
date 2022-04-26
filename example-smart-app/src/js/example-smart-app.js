@@ -12,6 +12,7 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+        console.log(pt)
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -32,10 +33,10 @@
           var fname = '';
           var lname = '';
 
-          if (typeof patient.name[0] !== 'undefined') {
-            fname = patient.name[0].given.join(' ');
-            lname = patient.name[0].family.join(' ');
-          }
+          // if (typeof patient.name[0] !== 'undefined') {
+          //   fname = patient.name[0].given.join(' ');
+          //   lname = patient.name[0].family.join(' ');
+          // }
 
           var height = byCodes('8302-2');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
